@@ -1,0 +1,19 @@
+baseURL = "https://deepanshukandpal.com/"
+locale = "en-US"
+title = "Deepanshu Kandpal"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  author = "Deepanshu Kandpal"
+  # The one line under your name on the home page. Rewrite in your own words.
+  description = "Stories."
+  essays = "https://404engineernotfound.com/"
+  papers = "https://papershelf.dev/"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[outputs]
+  home = ["html", "rss"]
+  section = ["html", "rss"]

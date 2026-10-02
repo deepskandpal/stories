@@ -1,0 +1,111 @@
+/* deepanshukandpal.com — stories. Same family as Papershelf, warmer accent. */
+
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --ink: #1d1b18;
+  --ink-2: #4a4640;
+  --muted: #77716a;
+  --rule: #e7e0d5;
+  --accent: #7a3b2e;
+  --accent-soft: #f3e8e3;
+
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151412;
+    --surface: #1d1b19;
+    --ink: #ece8e1;
+    --ink-2: #c9c3b9;
+    --muted: #9a938a;
+    --rule: #2f2b27;
+    --accent: #e0a593;
+    --accent-soft: #2e221e;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+  background: var(--bg); color: var(--ink);
+  font: 400 1.0625rem/1.7 var(--serif); font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+main { flex: 1; }
+a { color: var(--accent); }
+
+.skip {
+  position: absolute; left: -999px; top: .5rem; z-index: 100;
+  background: var(--surface); color: var(--ink); padding: .5rem .75rem; border-radius: 6px;
+  font: 500 .875rem var(--sans);
+}
+.skip:focus { left: .5rem; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- Header & footer ---------- */
+
+.site-header { border-bottom: 1px solid var(--rule); }
+.site-header .inner {
+  max-width: 760px; margin: 0 auto; height: 3.5rem; padding: 0 1rem;
+  display: flex; align-items: center; gap: 1.5rem; font: 500 .9rem var(--sans);
+}
+.brand { color: var(--ink); text-decoration: none; font: 600 1.05rem var(--serif); letter-spacing: -.01em; }
+.site-header nav { margin-left: auto; display: flex; gap: 1.1rem; }
+.site-header nav a { color: var(--ink-2); text-decoration: none; }
+.site-header nav a:hover { color: var(--accent); }
+.site-header nav a[aria-current="page"] { color: var(--ink); }
+
+.site-footer { border-top: 1px solid var(--rule); color: var(--muted); font: .85rem/1.5 var(--sans); }
+.site-footer .inner {
+  max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem;
+  display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between;
+}
+.site-footer a { color: var(--ink-2); }
+.footer-links { display: flex; gap: 1rem; }
+
+/* ---------- Home ---------- */
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 3.5rem 1rem 4rem; }
+.intro h1 { font: 600 clamp(2rem, 1.6rem + 1.6vw, 2.6rem)/1.1 var(--serif); letter-spacing: -.025em; margin: 0 0 .5rem; }
+.intro p { color: var(--ink-2); font-size: 1.15rem; margin: 0; }
+
+.story-list { list-style: none; padding: 0; margin: 3rem 0 0; border-top: 1px solid var(--rule); }
+.story-list a { display: block; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); color: inherit; text-decoration: none; }
+.story-list h2 { font: 600 1.4rem/1.25 var(--serif); letter-spacing: -.01em; margin: 0 0 .35rem; transition: color .15s; }
+.story-list a:hover h2 { color: var(--accent); }
+.story-list .hook { font-style: italic; color: var(--ink-2); margin: 0 0 .5rem; }
+.meta { display: flex; flex-wrap: wrap; margin: 0; font: 400 .8125rem/1.5 var(--sans); color: var(--muted); }
+.meta > * + *::before { content: "·"; margin: 0 .5rem; }
+.empty { color: var(--muted); font: 400 1rem/1.6 var(--sans); }
+
+/* ---------- Story page ---------- */
+
+.story-page { max-width: 36rem; margin: 0 auto; padding: 3.5rem 1rem 5rem; }
+.story-head { margin-bottom: 2.5rem; }
+.story-head h1 { font: 600 clamp(1.9rem, 1.4rem + 1.8vw, 2.6rem)/1.15 var(--serif); letter-spacing: -.02em; margin: 0 0 .75rem; text-wrap: balance; }
+
+.story { font-size: 1.15rem; line-height: 1.75; }
+.story p { margin: 0 0 1.2em; }
+.story h2, .story h3 { font: 600 1.2rem/1.4 var(--serif); margin: 2.5rem 0 1rem; }
+.story hr { border: 0; text-align: center; margin: 2.5rem 0; }
+.story hr::after { content: "⁂"; color: var(--muted); letter-spacing: .5em; }
+.story blockquote { margin: 1.5rem 0; padding-left: 1.1rem; border-left: 2px solid var(--rule); color: var(--ink-2); font-style: italic; }
+.story img { max-width: 100%; height: auto; display: block; margin: 2rem auto; border-radius: 4px; }
+.story em { font-style: italic; }
+
+.end-mark { text-align: center; color: var(--accent); margin: 3rem 0 2rem; font-size: 1.1rem; }
+.story-next { border-top: 1px solid var(--rule); padding-top: 1.25rem; font: 500 .95rem var(--sans); }
+.story-next a { color: var(--ink); text-decoration: none; }
+.story-next a:hover { color: var(--accent); }
+.story-next span { display: block; font: 600 .7rem/1.6 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+@media (max-width: 560px) {
+  .wrap, .story-page { padding-top: 2.25rem; }
+  .story { font-size: 1.1rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

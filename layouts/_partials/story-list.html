@@ -1,0 +1,20 @@
+{{- with . }}
+<ol class="story-list" reversed>
+  {{- range .ByDate.Reverse }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      <h2>{{ .Title }}</h2>
+      {{- with .Params.hook }}<p class="hook">{{ . }}</p>{{ end }}
+      <p class="meta">
+        {{- with .Params.genre }}<span>{{ . }}</span>{{ end }}
+        <span>{{ .ReadingTime }} min</span>
+        <span>{{ .Date.Format "Jan 2006" }}</span>
+        {{- if .Draft }}<span><em>draft</em></span>{{ end }}
+      </p>
+    </a>
+  </li>
+  {{- end }}
+</ol>
+{{- else }}
+<p class="empty">The first story is being written.</p>
+{{- end }}
