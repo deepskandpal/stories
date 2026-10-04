@@ -2,8 +2,9 @@
   <div class="inner">
     <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
     <nav aria-label="Main">
-      <a href="{{ "/" | relURL }}"{{ if .IsHome }} aria-current="page"{{ end }}>Stories</a>
-      <a href="{{ "/index.xml" | relURL }}">RSS</a>
+      <a href="{{ "/thoughts/" | relURL }}"{{ if eq .Section "thoughts" }} aria-current="page"{{ end }}>Thoughts</a>
+      <a href="{{ "/writings/" | relURL }}"{{ if eq .Section "writings" }} aria-current="page"{{ end }}>Writings</a>
+      <a href="{{ site.Params.tech }}">Tech ↗</a>
     </nav>
   </div>
 </header>

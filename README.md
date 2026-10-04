@@ -1,18 +1,28 @@
 # deepanshukandpal.com
 
-Stories by Deepanshu Kandpal. Hugo site served at **https://deepanshukandpal.com**.
+Deepanshu Kandpal's own site, and the root of everything else. Hugo, served at **https://deepanshukandpal.com**.
+
+Two sections:
+
+- **Thoughts** (`content/thoughts/`): opinion pieces, at `/thoughts/<slug>/`.
+- **Writings** (`content/writings/`): evidence-led pieces, at `/writings/<slug>/`. A tech piece's home is
+  404engineernotfound.com; its copy here carries `canonical:` pointing there.
+
+The tech work lives at https://404engineernotfound.com (linked as "Tech" in the header).
 
 ## Writing flow
 
-Stories are written in the Obsidian vault (`Fiction/`), one note per story, with
-`title`, `genre` and `hook` in the note's frontmatter. They're copied in with:
+Pieces are written in the Obsidian vault (`/home/dk/vaults/deepanshu-kandpal/deepanshukandpal.com/`) and copied in with:
 
 ```sh
-scripts/from_vault.py "/home/dk/vaults/Fiction/<story>.md"            # update as a draft
-scripts/from_vault.py "/home/dk/vaults/Fiction/<story>.md" --publish  # make it live
+scripts/from_vault.py "<note>.md" --section thoughts            # update as a draft
+scripts/from_vault.py "<note>.md" --section writings --publish  # make it live, dated today
 ```
 
-`%% … %%` comments are dropped, `![[images]]` are copied in, `[[links]]` become text.
+`%% … %%` comments are dropped, `![[images]]` are copied in, `[[links]]` become text. Optional note
+frontmatter: `title`, `tags`, `description`, `canonical`.
+
+The line under the name on the home page is `params.homeline` in `hugo.toml` (empty = no line).
 
 ## Local preview
 

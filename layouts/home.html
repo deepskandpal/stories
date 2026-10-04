@@ -2,8 +2,16 @@
 <div class="wrap">
   <section class="intro">
     <h1>{{ site.Title }}</h1>
-    <p>{{ site.Params.description }}</p>
+    <!-- homepage line: the user writes this (params.homeline in hugo.toml) -->
+    {{- with site.Params.homeline }}<p>{{ . }}</p>{{ end }}
   </section>
-  {{ partial "story-list.html" (where site.RegularPages "Section" "stories") }}
+  <section class="list-block" aria-labelledby="writings">
+    <h2 class="list-label" id="writings"><a href="{{ "/writings/" | relURL }}">Writings</a></h2>
+    {{ partial "piece-list.html" (dict "pages" (where site.RegularPages "Section" "writings") "tags" true) }}
+  </section>
+  <section class="list-block" aria-labelledby="thoughts">
+    <h2 class="list-label" id="thoughts"><a href="{{ "/thoughts/" | relURL }}">Thoughts</a></h2>
+    {{ partial "piece-list.html" (dict "pages" (where site.RegularPages "Section" "thoughts") "tags" false) }}
+  </section>
 </div>
 {{ end }}

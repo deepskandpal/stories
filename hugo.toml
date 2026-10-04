@@ -6,10 +6,15 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
   author = "Deepanshu Kandpal"
-  # The one line under your name on the home page. Rewrite in your own words.
-  description = "Stories."
-  essays = "https://404engineernotfound.com/"
-  papers = "https://papershelf.dev/"
+  # Used for search results and link previews of the home page.
+  description = "Thoughts and writings by Deepanshu Kandpal."
+  # The line under your name on the home page. Empty means no line is shown; you write it.
+  homeline = ""
+  tech = "https://404engineernotfound.com/"
+  x = "https://x.com/atdeepanshu"
+  xhandle = "@atdeepanshu"
+  github = "https://github.com/deepskandpal"
+  linkedin = "https://www.linkedin.com/in/deepanshu-kandpal/"
 
 [markup.goldmark.renderer]
   unsafe = false

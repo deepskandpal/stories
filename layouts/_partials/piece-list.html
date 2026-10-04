@@ -1,14 +1,14 @@
-{{- with . }}
+{{- $showTags := .tags }}
+{{- with .pages }}
 <ol class="story-list" reversed>
   {{- range .ByDate.Reverse }}
   <li>
     <a href="{{ .RelPermalink }}">
-      <h2>{{ .Title }}</h2>
-      {{- with .Params.hook }}<p class="hook">{{ . }}</p>{{ end }}
+      <h3>{{ .Title }}</h3>
       <p class="meta">
-        {{- with .Params.genre }}<span>{{ . }}</span>{{ end }}
-        <span>{{ .ReadingTime }} min</span>
         <span>{{ .Date.Format "Jan 2006" }}</span>
+        {{- if $showTags }}{{ with .Params.tags }}<span>{{ range $i, $t := . }}{{ if $i }} {{ end }}#{{ $t | lower }}{{ end }}</span>{{ end }}{{ end }}
+        <span>{{ .ReadingTime }} min</span>
         {{- if .Draft }}<span><em>draft</em></span>{{ end }}
       </p>
     </a>
@@ -16,5 +16,5 @@
   {{- end }}
 </ol>
 {{- else }}
-<p class="empty">The first story is being written.</p>
+<p class="empty">Nothing here yet.</p>
 {{- end }}

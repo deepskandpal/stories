@@ -1,6 +1,28 @@
 {{ define "main" }}
-<article class="wrap">
-  <header class="intro"><h1>{{ .Title }}</h1></header>
-  <div class="story">{{ .Content }}</div>
+{{- $all := (where site.RegularPages "Section" .Section).ByDate.Reverse }}
+{{- $next := false }}{{- $found := false }}
+{{- range $all }}{{ if $found }}{{ if not $next }}{{ $next = . }}{{ end }}{{ end }}{{ if eq .RelPermalink $.RelPermalink }}{{ $found = true }}{{ end }}{{ end }}
+<article class="story-page">
+  <header class="story-head">
+    <h1>{{ .Title }}</h1>
+    <p class="meta">
+      <span>{{ .Date.Format "2 January 2006" }}</span>
+      <span>{{ .ReadingTime }} min read</span>
+      {{- with .Params.tags }}<span>{{ range $i, $t := . }}{{ if $i }} {{ end }}#{{ $t | lower }}{{ end }}</span>{{ end }}
+    </p>
+  </header>
+  <div class="story">
+    {{ .Content }}
+  </div>
+  <p class="end-mark" aria-hidden="true">✦</p>
+  {{- with .CurrentSection }}
+  <nav class="story-next" aria-label="More {{ .Title | lower }}">
+    {{- with $next }}
+    <a href="{{ .RelPermalink }}"><span>Next in {{ $.CurrentSection.Title | lower }}</span> {{ .Title }} →</a>
+    {{- else }}
+    <a href="{{ .RelPermalink }}">All {{ .Title | lower }} →</a>
+    {{- end }}
+  </nav>
+  {{- end }}
 </article>
 {{ end }}

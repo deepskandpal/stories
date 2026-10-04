@@ -1,24 +1,29 @@
 #!/usr/bin/env python3
-"""Copy a story from the Obsidian vault (Fiction/) into this site.
+"""Copy a piece from the Obsidian vault (/home/dk/vaults/deepanshu-kandpal/deepanshukandpal.com/)
+into this site, as a thought or a writing.
 
-The story's note carries its own details in frontmatter:
+The note may carry its own details in frontmatter (all optional):
 
     ---
-    title: The Parallel Justice System
-    genre: horror
-    hook: One line that makes a stranger want to read it.
+    title: Learning needs to be hard
+    tags: [tech]
+    description: One line for search results and link previews.
     ---
+
+Without a title, the note's first "# Heading" (or its file name) is used.
 
 Obsidian-only pieces are converted:
 
   %% private note %%     -> removed (never published)
-  ![[image.png|caption]] -> the image, copied into the story's folder
+  ![[image.png|caption]] -> the image, copied into the page's folder
   [[link|text]]          -> text
   > [!note] Title        -> > **Title**
 
 Usage:
-  scripts/from_vault.py <vault-note.md> [--slug slug]            # update as a draft
-  scripts/from_vault.py <vault-note.md> [--slug slug] --publish  # make it live, dated today
+  scripts/from_vault.py <vault-note.md> --section thoughts [--slug slug]            # update as a draft
+  scripts/from_vault.py <vault-note.md> --section writings [--slug slug] --publish  # make it live, dated today
+
+The page lands at content/<section>/<slug>/index.md, so its URL is /<section>/<slug>/.
 """
 
 import argparse
@@ -39,7 +44,7 @@ CALLOUT = re.compile(r"^(\s*>\s*)\[!(\w+)\][+-]?\s*(.*)$")
 
 
 def frontmatter(text: str) -> dict:
-    """Flat `key: value` frontmatter only, which is all a story note needs."""
+    """Flat `key: value` frontmatter only, which is all a note needs."""
     m = FRONTMATTER.match(text)
     meta = {}
     if m:
@@ -88,6 +93,7 @@ def convert(text: str, note: Path, bundle: Path, missing: list) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("note", type=Path)
+    ap.add_argument("--section", required=True, choices=["thoughts", "writings"])
     ap.add_argument("--slug")
     ap.add_argument("--publish", action="store_true")
     args = ap.parse_args()
@@ -101,7 +107,7 @@ def main() -> int:
     title = meta.get("title") or (heading.group(1).strip() if heading else note.stem)
     slug = args.slug or re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
 
-    bundle = SITE / "content" / "stories" / slug
+    bundle = SITE / "content" / args.section / slug
     bundle.mkdir(parents=True, exist_ok=True)
     index = bundle / "index.md"
     old = frontmatter(index.read_text()) if index.is_file() else {}
@@ -112,9 +118,14 @@ def main() -> int:
     draft = "false" if args.publish else old.get("draft", "true")
 
     head = ["---", f"title: {json.dumps(title, ensure_ascii=False)}", f"date: {date}", f"draft: {draft}"]
-    for key in ("genre", "hook"):
-        if meta.get(key):
-            head.append(f"{key}: {json.dumps(meta[key], ensure_ascii=False)}")
+    tags = [t.strip().strip('"\'') for t in meta.get("tags", "").strip("[]").split(",") if t.strip()]
+    tags = tags or [t for t in old.get("tags", "").strip("[]").replace('"', "").split(", ") if t]
+    if tags:
+        head.append(f"tags: {json.dumps(tags, ensure_ascii=False)}")
+    for key in ("description", "canonical"):
+        value = meta.get(key) or old.get(key, "").strip('"')
+        if value:
+            head.append(f"{key}: {json.dumps(value, ensure_ascii=False)}")
     head.append("---")
     index.write_text("\n".join(head) + "\n\n" + body)
 

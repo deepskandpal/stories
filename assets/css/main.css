@@ -76,11 +76,16 @@ a { color: var(--accent); }
 
 .story-list { list-style: none; padding: 0; margin: 3rem 0 0; border-top: 1px solid var(--rule); }
 .story-list a { display: block; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); color: inherit; text-decoration: none; }
-.story-list h2 { font: 600 1.4rem/1.25 var(--serif); letter-spacing: -.01em; margin: 0 0 .35rem; transition: color .15s; }
-.story-list a:hover h2 { color: var(--accent); }
+.story-list h3 { font: 600 1.4rem/1.25 var(--serif); letter-spacing: -.01em; margin: 0 0 .35rem; transition: color .15s; }
+.story-list a:hover h3 { color: var(--accent); }
 .story-list .hook { font-style: italic; color: var(--ink-2); margin: 0 0 .5rem; }
 .meta { display: flex; flex-wrap: wrap; margin: 0; font: 400 .8125rem/1.5 var(--sans); color: var(--muted); }
 .meta > * + *::before { content: "·"; margin: 0 .5rem; }
+.list-block { margin-top: 3rem; }
+.list-label { margin: 0; font: 600 .75rem/1.6 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.list-label a { color: var(--muted); text-decoration: none; }
+.list-label a:hover { color: var(--accent); }
+.list-block .story-list { margin-top: .75rem; }
 .empty { color: var(--muted); font: 400 1rem/1.6 var(--sans); }
 
 /* ---------- Story page ---------- */
@@ -97,6 +102,13 @@ a { color: var(--accent); }
 .story blockquote { margin: 1.5rem 0; padding-left: 1.1rem; border-left: 2px solid var(--rule); color: var(--ink-2); font-style: italic; }
 .story img { max-width: 100%; height: auto; display: block; margin: 2rem auto; border-radius: 4px; }
 .story em { font-style: italic; }
+.story ul, .story ol { padding-left: 1.4em; margin: 0 0 1.2em; }
+.story li { margin: .3em 0; }
+.story code { font: .88em/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--rule); padding: .1em .3em; border-radius: 3px; }
+.story pre { overflow-x: auto; background: var(--rule); padding: 1rem; border-radius: 4px; margin: 0 0 1.4em; line-height: 1.5; }
+.story pre code { background: none; padding: 0; font-size: .85rem; }
+.story table { border-collapse: collapse; width: 100%; margin: 0 0 1.4em; font-size: .95rem; display: block; overflow-x: auto; }
+.story th, .story td { border-bottom: 1px solid var(--rule); padding: .4rem .6rem; text-align: left; }
 
 .end-mark { text-align: center; color: var(--accent); margin: 3rem 0 2rem; font-size: 1.1rem; }
 .story-next { border-top: 1px solid var(--rule); padding-top: 1.25rem; font: 500 .95rem var(--sans); }
