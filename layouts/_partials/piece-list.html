@@ -1,20 +1,13 @@
 {{- $showTags := .tags }}
 {{- with .pages }}
-<ol class="story-list" reversed>
+<ul class="entries">
   {{- range .ByDate.Reverse }}
   <li>
-    <a href="{{ .RelPermalink }}">
-      <h3>{{ .Title }}</h3>
-      <p class="meta">
-        <span>{{ .Date.Format "Jan 2006" }}</span>
-        {{- if $showTags }}{{ with .Params.tags }}<span>{{ range $i, $t := . }}{{ if $i }} {{ end }}#{{ $t | lower }}{{ end }}</span>{{ end }}{{ end }}
-        <span>{{ .ReadingTime }} min</span>
-        {{- if .Draft }}<span><em>draft</em></span>{{ end }}
-      </p>
-    </a>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="entry-meta">{{ .Date.Format "Jan 2006" }}{{ if $showTags }}{{ with .Params.tags }} · {{ range $i, $t := . }}{{ if $i }} {{ end }}#{{ $t | lower }}{{ end }}{{ end }}{{ end }} · {{ .ReadingTime }} min{{ if .Draft }} · <em>draft</em>{{ end }}</span>
   </li>
   {{- end }}
-</ol>
+</ul>
 {{- else }}
-<p class="empty">Nothing here yet.</p>
+<p>Nothing here yet.</p>
 {{- end }}

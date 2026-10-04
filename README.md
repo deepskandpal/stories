@@ -34,3 +34,13 @@ hugo server -D
 
 Every push to `main` builds with Hugo 0.167 and deploys via GitHub Actions. The custom
 domain is set in the repo's Pages settings; DNS is on Cloudflare (proxied).
+
+## Look
+
+[Tufte CSS](https://edwardtufte.github.io/tufte-css/) (MIT, vendored in `static/tufte/` with the ET Book fonts), plus a few overrides in `assets/css/main.css`. Since 04 Oct 2026 the design is frozen until the end of Q4.
+
+Margin notes in a piece:
+- `{{< sidenote >}}a numbered note{{< /sidenote >}}`
+- `{{< marginnote >}}an unnumbered note{{< /marginnote >}}`
+
+On a phone, both tuck behind a tap.

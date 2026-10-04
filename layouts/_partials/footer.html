@@ -1,12 +1,9 @@
 <footer class="site-footer">
-  <div class="inner">
-    <span>© {{ now.Year }} {{ site.Params.author }}</span>
-    <span class="footer-links">
-      <a href="{{ site.Params.tech }}">Tech</a>
-      <a href="{{ site.Params.x }}">X</a>
-      <a href="{{ site.Params.github }}">GitHub</a>
-      <a href="{{ site.Params.linkedin }}">LinkedIn</a>
-      <a href="{{ "/index.xml" | relURL }}">RSS</a>
-    </span>
-  </div>
+  <p>
+    <a href="{{ site.Params.tech }}">Tech</a> ·
+    <a href="{{ site.Params.x }}">X</a> ·
+    <a href="{{ site.Params.linkedin }}">LinkedIn</a> ·
+    <a href="{{ site.Params.github }}">GitHub</a> ·
+    <a href="{{ "/index.xml" | relURL }}">RSS</a>
+  </p>
 </footer>

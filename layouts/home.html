@@ -1,17 +1,14 @@
 {{ define "main" }}
-<div class="wrap">
-  <section class="intro">
-    <h1>{{ site.Title }}</h1>
-    <!-- homepage line: the user writes this (params.homeline in hugo.toml) -->
-    {{- with site.Params.homeline }}<p>{{ . }}</p>{{ end }}
-  </section>
-  <section class="list-block" aria-labelledby="writings">
-    <h2 class="list-label" id="writings"><a href="{{ "/writings/" | relURL }}">Writings</a></h2>
-    {{ partial "piece-list.html" (dict "pages" (where site.RegularPages "Section" "writings") "tags" true) }}
-  </section>
-  <section class="list-block" aria-labelledby="thoughts">
-    <h2 class="list-label" id="thoughts"><a href="{{ "/thoughts/" | relURL }}">Thoughts</a></h2>
-    {{ partial "piece-list.html" (dict "pages" (where site.RegularPages "Section" "thoughts") "tags" false) }}
-  </section>
-</div>
+<h1>{{ site.Title }}</h1>
+<!-- homepage line: the user writes this (params.homeline in hugo.toml) -->
+{{- with site.Params.homeline }}<p class="subtitle">{{ . }}</p>{{ end }}
+<nav class="homenav" aria-label="Main">{{ partial "navlinks.html" . }}</nav>
+<section aria-labelledby="writings">
+  <h2 id="writings"><a href="{{ "/writings/" | relURL }}">Writings</a></h2>
+  {{ partial "piece-list.html" (dict "pages" (where site.RegularPages "Section" "writings") "tags" true) }}
+</section>
+<section aria-labelledby="thoughts">
+  <h2 id="thoughts"><a href="{{ "/thoughts/" | relURL }}">Thoughts</a></h2>
+  {{ partial "piece-list.html" (dict "pages" (where site.RegularPages "Section" "thoughts") "tags" false) }}
+</section>
 {{ end }}

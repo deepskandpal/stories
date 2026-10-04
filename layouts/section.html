@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="wrap">
-  <section class="intro"><h1>{{ .Title }}</h1></section>
+<h1>{{ .Title }}</h1>
+<section>
   {{ partial "piece-list.html" (dict "pages" .RegularPages "tags" (eq .Section "writings")) }}
-</div>
+</section>
 {{ end }}
