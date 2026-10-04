@@ -8,8 +8,8 @@ disableKinds = ["taxonomy", "term"]
   author = "Deepanshu Kandpal"
   # Used for search results and link previews of the home page.
   description = "Thoughts and writings by Deepanshu Kandpal."
-  # The line under your name on the home page. Empty means no line is shown; you write it.
-  homeline = ""
+  # The line under your name on the home page, chosen by the user on 04 Oct 2026.
+  homeline = "A monologue I've been having for years, now with more than three listeners."
   tech = "https://404engineernotfound.com/"
   x = "https://x.com/atdeepanshu"
   xhandle = "@atdeepanshu"
