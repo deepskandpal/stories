@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="960" height="440" fill="#ffffff"/>
+<text x="60" y="34" font-size="20" font-weight="700" fill="#1B1B1B">Rajeev’s career: picked for potential, then expected to bring results</text>
+<text x="60" y="57" font-size="14" fill="#5E5E5E">A hypothetical actor over five to six decades. The line shows how in demand he is: a sketch, not data.</text>
+<rect x="60.0" y="108" width="301.5" height="222" fill="#E9F1FB"/>
+<text x="210.8" y="127" font-size="12.5" font-weight="700" letter-spacing=".06em" fill="#2F6DB5" text-anchor="middle">THROUGH THE GATES</text>
+<rect x="361.5" y="108" width="212.6" height="222" fill="#E4F3E9"/>
+<text x="467.8" y="127" font-size="12.5" font-weight="700" letter-spacing=".06em" fill="#2E7D4F" text-anchor="middle">DELIVERS</text>
+<rect x="574.1" y="108" width="252.1" height="222" fill="#FAE7E3"/>
+<text x="700.1" y="127" font-size="12.5" font-weight="700" letter-spacing=".06em" fill="#B2412F" text-anchor="middle">STOPS DELIVERING</text>
+<rect x="826.2" y="108" width="103.8" height="222" fill="#E4F3E9"/>
+<text x="878.1" y="127" font-size="12.5" font-weight="700" letter-spacing=".06em" fill="#2E7D4F" text-anchor="middle">2.0</text>
+<path d="M62.0,104 V96 H359.5 V104" fill="none" stroke="#2F6DB5" stroke-width="1.6"/>
+<rect x="118.8" y="82" width="184.0" height="20" fill="#ffffff"/>
+<text x="210.8" y="97" font-size="15" font-weight="700" fill="#2F6DB5" text-anchor="middle">Picked for potential</text>
+<path d="M363.5,104 V96 H928.0 V104" fill="none" stroke="#2E7D4F" stroke-width="1.6"/>
+<rect x="530.8" y="82" width="230.0" height="20" fill="#ffffff"/>
+<text x="645.8" y="97" font-size="15" font-weight="700" fill="#2E7D4F" text-anchor="middle">Expected to bring results</text>
+<line x1="361.5" x2="361.5" y1="108" y2="342" stroke="#1B1B1B" stroke-width="1.4" stroke-dasharray="4 4"/>
+<rect x="336.5" y="306" width="50" height="19" rx="9.5" fill="#1B1B1B"/>
+<text x="361.5" y="320" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Bet 1</text>
+<line x1="826.2" x2="826.2" y1="108" y2="342" stroke="#1B1B1B" stroke-width="1.4" stroke-dasharray="4 4"/>
+<rect x="801.2" y="306" width="50" height="19" rx="9.5" fill="#1B1B1B"/>
+<text x="826.2" y="320" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Bet 2</text>
+<path d="M60.0,314.4 C65.8,313.8 74.0,317.6 94.6,310.6 C115.2,303.6 153.9,283.4 183.6,272.6 C213.2,261.8 242.9,254.2 272.6,246.0 C302.2,237.8 332.7,239.0 361.5,223.2 C390.4,207.4 418.4,161.8 445.6,151.0 C472.8,140.2 498.3,143.4 524.7,158.6 C551.0,173.8 580.7,230.8 603.8,242.2 C626.8,253.6 644.1,220.0 663.1,227.0 C682.0,234.0 698.5,270.7 717.4,284.0 C736.4,297.3 758.6,313.1 776.8,306.8 C794.9,300.5 800.7,266.3 826.2,246.0 C851.7,225.7 912.7,195.3 930.0,185.2" fill="none" stroke="#1B1B1B" stroke-width="3" stroke-linecap="round"/>
+<line x1="60" x2="938" y1="342" y2="342" stroke="#1B1B1B" stroke-width="1.4"/>
+<path d="M938,337 L946,342 L938,347 Z" fill="#1B1B1B"/>
+<line x1="94.6" x2="94.6" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="94.6" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Auditions</text>
+<text x="94.6" y="382" font-size="12" fill="#5E5E5E" text-anchor="middle">early 20s</text>
+<line x1="183.6" x2="183.6" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="183.6" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Side role</text>
+<line x1="272.6" x2="272.6" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="272.6" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Typecast</text>
+<text x="272.6" y="382" font-size="12" fill="#5E5E5E" text-anchor="middle">“that character”</text>
+<line x1="361.5" x2="361.5" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="361.5" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Lead role</text>
+<line x1="485.1" x2="485.1" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="485.1" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Hit, then repeats</text>
+<text x="485.1" y="382" font-size="12" fill="#5E5E5E" text-anchor="middle">more of the same</text>
+<line x1="603.8" x2="603.8" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="603.8" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Flops</text>
+<text x="603.8" y="382" font-size="12" fill="#5E5E5E" text-anchor="middle">risk or boredom</text>
+<line x1="687.8" x2="687.8" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="687.8" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Comeback fails</text>
+<text x="687.8" y="382" font-size="12" fill="#5E5E5E" text-anchor="middle">a has-been</text>
+<line x1="776.8" x2="776.8" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="776.8" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Hiatus</text>
+<line x1="878.6" x2="878.6" y1="337" y2="347" stroke="#1B1B1B" stroke-width="1.4"/>
+<text x="878.6" y="364" font-size="13.5" font-weight="600" fill="#1B1B1B" text-anchor="middle">Standout roles</text>
+<text x="878.6" y="382" font-size="12" fill="#5E5E5E" text-anchor="middle">not as the lead</text>
+<circle cx="94.6" cy="310.6" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="183.6" cy="272.6" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="272.6" cy="246.0" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="361.5" cy="223.2" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="445.6" cy="151.0" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="524.7" cy="158.6" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="603.8" cy="242.2" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="663.1" cy="227.0" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="717.4" cy="284.0" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="776.8" cy="306.8" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="826.2" cy="246.0" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<circle cx="930.0" cy="185.2" r="4.2" fill="#ffffff" stroke="#1B1B1B" stroke-width="2"/>
+<text x="60" y="418" font-size="12.5" fill="#5E5E5E">Not to scale. Bet 1: the industry risks his first lead role on his potential. Bet 2: someone risks a breakthrough role on him again.</text>
+</svg>
